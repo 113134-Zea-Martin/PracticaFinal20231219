@@ -1,0 +1,16 @@
+version: '3'
+services:
+  java-app:
+    container_name: hotel-app
+    image: hotel-java_app
+    build: .
+    ports:
+      - "8081:8081"
+    depends_on:
+      - java-api
+
+  java-api:
+    container_name: java-api-hotel
+    image: danicattaneob/labo-iv-final-2023-12-19:1.0.0
+    ports:
+      - "8080:8080"
